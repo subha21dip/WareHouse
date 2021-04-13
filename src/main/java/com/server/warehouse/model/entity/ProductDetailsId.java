@@ -4,15 +4,15 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class ProductDetailsId implements Serializable {
-    private Long productId;
+    private String productName;
     private Long articleId;
 
     public ProductDetailsId() {
     }
 
-    public ProductDetailsId(Long productId, Long articleId) {
-        this.productId = productId;
-        this.articleId = productId;
+    public ProductDetailsId(String productName, Long articleId) {
+        this.productName = productName;
+        this.articleId = articleId;
     }
 
     @Override
@@ -20,12 +20,12 @@ public class ProductDetailsId implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ProductDetailsId productDetailsId = (ProductDetailsId) o;
-        return productId.equals(productDetailsId.productId) &&
+        return productName.equals(productDetailsId.productName) &&
                 articleId.equals(productDetailsId.articleId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productId, articleId);
+        return Objects.hash(productName, articleId);
     }
 }

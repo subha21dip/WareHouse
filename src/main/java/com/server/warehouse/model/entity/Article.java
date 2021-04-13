@@ -23,7 +23,7 @@ public class Article {
 
     }
 
-    public Article(Long id, String name, Integer price, Integer count) {
+    public Article(Long id, String name, long count) {
         this.id = id;
         this.name = name;
         this.count = count;

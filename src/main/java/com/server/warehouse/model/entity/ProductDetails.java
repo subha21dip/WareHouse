@@ -11,8 +11,8 @@ import java.io.Serializable;
 public class ProductDetails implements Serializable {
 
     @Id
-    @Column(name = "product_id")
-    private Long productId;
+    @Column(name = "product_name")
+    private String productName;
 
     @Id
     @Column(name = "article_id")
@@ -20,22 +20,22 @@ public class ProductDetails implements Serializable {
 
     @Column(name = "article_quantity")
     @NotNull
-    private Long quantity;
+    private long quantity;
 
-    public ProductDetails(Long productId, Long articleId, Long quantity) {
-        this.productId = productId;
+    public ProductDetails(String productName, Long articleId, Long quantity) {
+        this.productName = productName;
         this.articleId = articleId;
         this.quantity = quantity;
     }
 
     public ProductDetails(){}
 
-    public Long getProductId() {
-        return productId;
+    public String getProductId() {
+        return productName;
     }
 
     public void setProductId(Long productId) {
-        this.productId = productId;
+        this.productName = productName;
     }
 
     public Long getArticleId() {

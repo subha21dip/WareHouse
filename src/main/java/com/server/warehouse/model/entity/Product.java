@@ -9,9 +9,6 @@ import javax.persistence.*;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
     @Column(name = "name")
     @NotNull
     private String name;
@@ -24,23 +21,19 @@ public class Product {
     @NotNull
     private long count;
 
+    @Column(name = "priority")
+    @NotNull
+    private long priority;
+
     public Product() {
 
     }
 
-    public Product(Long id, String name, Integer price, Integer count) {
-        this.id = id;
+    public Product(String name, double price, long count, Integer priority) {
         this.name = name;
         this.price = price;
         this.count = count;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+        this.priority = priority;
     }
 
     public String getName() {
@@ -65,6 +58,14 @@ public class Product {
 
     public void setCount(long count) {
         this.count = count;
+    }
+
+    public long getPriority() {
+        return priority;
+    }
+
+    public void setPriority(long priority) {
+        this.priority = priority;
     }
 }
 
