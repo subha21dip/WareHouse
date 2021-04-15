@@ -13,6 +13,14 @@ public class ProductVO implements  Comparable<ProductVO>{
     @JsonProperty("contain_articles")
     List<ProductArticlesVO> articles;
 
+    public ProductVO(){}
+
+    public ProductVO(String name, double price, List<ProductArticlesVO> articles) {
+        this.name = name;
+        this.price = price;
+        this.articles = articles;
+    }
+
     public List<ProductArticlesVO> getArticles() {
         return articles;
     }

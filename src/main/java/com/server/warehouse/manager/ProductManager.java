@@ -46,6 +46,7 @@ public class ProductManager {
                 }
                 Collections.sort(quantityList);
                 Long quantity = quantityList.get(0);
+                //reduce the total article quantity by the product quantity and article quantity needed for the product
                 for (ProductArticlesVO productArticle : articles
                 ) {
                     Long articleCount = articleMap.get(productArticle.getId()).getQuantity();

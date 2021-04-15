@@ -11,6 +11,13 @@ public class ProductArticlesVO {
     @JsonProperty("amount_of")
     private long quantity;
 
+    public ProductArticlesVO(long id, long quantity) {
+        this.id = id;
+        this.quantity = quantity;
+    }
+
+    public ProductArticlesVO() {}
+
     public long getQuantity() {
         return quantity;
     }
